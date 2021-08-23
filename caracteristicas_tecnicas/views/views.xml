@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="caracteristicas_tecnicas.product_template_form_view">
+            <field name="name">caracteristicas.tecnicas.product.template.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='general_information']/group[1]" position="after">
+                    <group name="caracteristicas_tecnicas" string="Características Técnicas">
+                        <group>
+                            <field name="tipo"/>
+                            <field name="formato1" attrs="{'invisible': [('tipo', 'not in', ('compresion', 'traccion'))]}"/>
+                            <field name="formato2" attrs="{'invisible': [('tipo', 'not in', ('torsion'))]}"/>
+                            <field name="sentido_de_giro" attrs="{'invisible': [('tipo', 'in', ('alambre_kg', 'alambre_de_forma', '', False))]}"/>
+                            <field name="paso_entre_espiras" attrs="{'invisible': [('tipo', 'not in', ('compresion','torsion'))]}"/>
+                            <field name="espiras_totales" attrs="{'invisible': [('tipo', 'not in', ('compresion','traccion','torsion'))]}"/>
+                            <field name="espiras_activas" attrs="{'invisible': [('tipo', 'not in', ('compresion'))]}"/>
+                            <field name="dia_interior_1" attrs="{'invisible': [('tipo', 'in', ('alambre_kg', 'alambre_de_forma', '', False))]}"/>
+                            <field name="dia_interior_2" attrs="{'invisible': ['|', ('tipo', 'not in', ('compresion', 'traccion')),('formato1', 'not in', ('conico', 'biconico'))]}"/>
+                            <field name="dia_interior_3" attrs="{'invisible': ['|', ('tipo', 'not in', ('compresion', 'traccion')),('formato1', 'not in', ('biconico'))]}"/>
+                            <field name="dia_exterior_1" attrs="{'invisible': [('tipo', 'in', ('alambre_kg', 'alambre_de_forma', '', False))]}"/>
+                            <field name="dia_exterior_2" attrs="{'invisible': ['|', ('tipo', 'not in', ('compresion', 'traccion')),('formato1', 'not in', ('conico', 'biconico'))]}"/>
+                            <field name="dia_exterior_3" attrs="{'invisible': ['|', ('tipo', 'not in', ('compresion', 'traccion')),('formato1', 'not in', ('biconico'))]}"/>
+                        </group>
+                        <group>
+                            <field name="material" attrs="{'invisible': [('tipo', 'in', (False))]}"/>
+                            <field name="dia_alambre" attrs="{'invisible': [('tipo', 'in', (False))]}"/>
+                            <field name="desarrollo" attrs="{'invisible': [('tipo', 'in', ('alambre_kg', '', False))]}"/>
+                            <field name="peso_material" attrs="{'invisible': [('tipo', 'in', ('alambre_kg', '', False))]}"/>
+                            <field name="largo_libre" attrs="{'invisible': [('tipo', 'in', ('alambre_kg', 'alambre_de_forma', '', False))]}"/>
+                            <field name="largo_pata_1" attrs="{'invisible': [('tipo', 'not in', ('torsion'))]}"/>
+                            <field name="largo_pata_2" attrs="{'invisible': [('tipo', 'not in', ('torsion'))]}"/>
+                            <field name="extremos" attrs="{'invisible': [('tipo', 'not in', ('compresion'))]}"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

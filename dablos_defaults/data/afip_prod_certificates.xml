@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate='0'>
+
+    <record id="certificate_alias_prod" model="afipws.certificate_alias">
+        <field name="common_name">odooprod</field>
+        <field name="key">-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEA6/CVxAg3Jy/P34ZXy4H1hftc3PjrnfUB52VbxdBH8WMBYIHn
+aN5+QKYFjLsDFQXFYlwFwdjyOXvMLuu2jYVJFzQtLY6fm+on5xJjG+Kd6vzpSn3f
+6yHrIaT9ISyLRSfilt6V3yv0j4NXIi0SERnEevYVIFrAU6q8OlZa6TjBfM2CLOsn
+H+71e9etxUbUjI250J5vU8GxnH23nrGPN+ZUVocyKr6ITRVirt3xms293ioVHtzK
+4auE0PQqOwpBBo/9GqBWuKdxyqR35RzwidEn8fpRgMehs+/O7dp26Cax7rXbwTbW
+HZTUGhZ+t7yXa2hvcpk/3DB7lNOY2zYtCsL9kwIDAQABAoIBAE58XMW2Wep+PC9G
+OGRpWex0/qI/Z9nGzBhWnl3CeHwzDB03eWxoPyVwVP5Io7DVl6CtrfibG5DFvtmI
+7dRMF1FRuQmjnTK3hQiYFEINc6zc7xopn1hPkzFA+jeT4sxhhT3c04xGyfcHoO+s
+gIsRwEuLGuIFbl8mt7DMUzer+qlx7B48EP4bRfr5e6Qo6S6n9L691OvmXKzWH9XL
+3AAe5vUIvPZpe265xJqWiQYTSj0LrfvItuT5VCJwwlyySCgKl+ZB0+ukGmK/QcNq
+NTE4xlXlZMfEsf+iKNHSBDsQX/ynkRB37mcOjoKM2isUiamd2ZsCqMcELWgRqK93
+hLVyyxkCgYEA/Jt/fYfZhyEeyrzkl1E8mvOM/kctvhsjkxxKaDtA3r6kGePnrHzB
+ivFowGR91MBfGMT56bQxo86JjIOfsG+1QYaGsBgj+6W7LF4SOHKwzrhKP7BPV7Kq
++QTvAAEQzAFUHs3EYlxyWUy33ftc+SG0fv734TAL843cnARknT29AEUCgYEA7xvH
+/eFasxSvHBsbT1sILsQ8z5eARo7nyRUkTd3nx9DLkxEupeOwTMky3+w/faTzc0lJ
+KUfe7C3piD7lBKYucj9zfcThSM7OoiUG4kbBMR3WabSlaCTw5PDKC2L8c43fdRwE
+iwpEmNOlzY7c2x/Yp9xV+SNdm2lL4K3PpUdH//cCgYEA2Zr6kKDeetHFPNDL+q44
+jyMPalzWwtWOJ8RPNMsWbsu7gbIaeTRfZdngaxwmaYfuY+ALiY9406uwQiOBBPS2
+J+RDUp75IGb8fpPrDkV+mhWXoJW5Q8reDfZ6DH7egV8DoCWR70nEF7lHCyrmRJcM
+bfomfw5svTqPuLbwFaSBlCECgYEA24b8JOGkLkrNQta4SjFf3+AXnNiR0zYdJIce
+n8ceqFvQrCPYWkIjeTw4U1JKMIcjZTNh0l7EEr9Ma+Siy5PvjMEovc3msLv/ButL
+2K/xa7DjTIWoX2ebK/bO6YlmEomtIY4ptaYluNKIpaOGrkAc4HDxFh4cMTWJjqzF
+ug8p0Z0CgYEA8ANpfxxV16vfql5oqFR3Y5Aq8HFHUj2BensbHCMcH1J/KUvGFQ8L
+WjR9GeM08sA9XLVD2Qygo6XhINzfBW4Hw1D6mTXPoMz7TfHhAtZ1AKv6aZSfRhGW
+BNiFqlpcfeUP5SbT5cW9SpNSP82kIMjQAIYPGmvX/tmX1Vbrp2IzwI4=
+-----END RSA PRIVATE KEY-----</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="country_id" ref="base.ar"/>
+        <field name="state_id" search="[('name','=','Buenos Aires')]" />
+        <field name="city">Bella Vista</field>
+        <field name="company_cuit">20333389771</field>
+        <field name="service_type">in_house</field>
+        <field name="type">production</field>
+        <field name="state">confirmed</field>
+    </record>
+
+    <record id="main_company_certificate" model="afipws.certificate">
+        <field name="alias_id" ref="main_company_certificate_prod"/>
+        <field name="state">confirmed</field>
+        <field name="csr">-----BEGIN CERTIFICATE REQUEST-----
+MIICkTCCAXkCAQAwTDELMAkGA1UEBhMCQVIxDzANBgNVBAoMBkRBQkxPUzERMA8G
+A1UEAwwIT0RPT1BST0QxGTAXBgNVBAUTEENVSVQgMjAzMzMzODk3NzEwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDr8JXECDcnL8/fhlfLgfWF+1zc+Oud
+9QHnZVvF0EfxYwFggedo3n5ApgWMuwMVBcViXAXB2PI5e8wu67aNhUkXNC0tjp+b
+6ifnEmMb4p3q/OlKfd/rIeshpP0hLItFJ+KW3pXfK/SPg1ciLRIRGcR69hUgWsBT
+qrw6VlrpOMF8zYIs6ycf7vV7163FRtSMjbnQnm9TwbGcfbeesY835lRWhzIqvohN
+FWKu3fGazb3eKhUe3Mrhq4TQ9Co7CkEGj/0aoFa4p3HKpHflHPCJ0Sfx+lGAx6Gz
+787t2nboJrHutdvBNtYdlNQaFn63vJdraG9ymT/cMHuU05jbNi0Kwv2TAgMBAAGg
+ADANBgkqhkiG9w0BAQsFAAOCAQEAPjBOTweJ9qMeUGkwWIZiOrGo0li8WvBjbzSP
+njL/gEvcocizvcBGqdnNLnxCAf9eoqUDusSdB7jTqnx50GAtdEEdxsY6S+AqMRdm
+VH47cEZ9k9ebequ3p7uzKz8v/It/Lcz4HuRQybNLC3XnzHhjOw4es/cDIgYKXRWp
+xeCRsGsUpivVr8fv1jOfP9qd2XwxoT9J3wuseCWCPdyhcxSc7itL2+ddEvum4hqM
+Ga6LDa8jhh8RwEwBR+fjJGiSdEQgkkcz9VXxgF0/yt2/wO+d8EVgEk4q09lRJiVa
+3Mg7er+FKmYdLL4X31V6KnmpzdYtWc6gQEbooT6ULbe5tRDF4A==
+-----END CERTIFICATE REQUEST-----</field>
+        <field name="crt">-----BEGIN CERTIFICATE-----
+MIIDQzCCAiugAwIBAgIIWXoTGtUrkeMwDQYJKoZIhvcNAQENBQAwMzEVMBMGA1UEAwwMQ29tcHV0
+YWRvcmVzMQ0wCwYDVQQKDARBRklQMQswCQYDVQQGEwJBUjAeFw0yMTA1MDEyMTA4NTJaFw0yMzA1
+MDEyMTA4NTJaMC4xETAPBgNVBAMMCG9kb29wcm9kMRkwFwYDVQQFExBDVUlUIDIwMzMzMzg5Nzcx
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6/CVxAg3Jy/P34ZXy4H1hftc3PjrnfUB
+52VbxdBH8WMBYIHnaN5+QKYFjLsDFQXFYlwFwdjyOXvMLuu2jYVJFzQtLY6fm+on5xJjG+Kd6vzp
+Sn3f6yHrIaT9ISyLRSfilt6V3yv0j4NXIi0SERnEevYVIFrAU6q8OlZa6TjBfM2CLOsnH+71e9et
+xUbUjI250J5vU8GxnH23nrGPN+ZUVocyKr6ITRVirt3xms293ioVHtzK4auE0PQqOwpBBo/9GqBW
+uKdxyqR35RzwidEn8fpRgMehs+/O7dp26Cax7rXbwTbWHZTUGhZ+t7yXa2hvcpk/3DB7lNOY2zYt
+CsL9kwIDAQABo2AwXjAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFFtAUTDnwyq2nFack4XjQoCw
+UOv2MB0GA1UdDgQWBBSzQzeC+AaCVeNCnYWN2k/6jPg7SzAOBgNVHQ8BAf8EBAMCBeAwDQYJKoZI
+hvcNAQENBQADggEBAGElPMFVeq8duqSdIOlSoM2/IM/IaH5ztiBQBWVeZ7yxz8N4P6qfG3zrSaDx
+eUUyD9HBALWop/8A7CBc8JbY5VrVl3DC3hk6dtM3O3HoqmOsaSUkPmFvrymDVGN+NZYrgY7bavqP
+1Jkng6M/G3Rb5E/IinRvYhO8UkSnPpauWLeMsRoFA+krqPfaQRvvt34qcBKISbyRcS+76GLqjkqZ
+IU61oAMVfO0Jkdi/EUg7nV0SEmCi3rlEfFDOoslR8stYCVOKWFk1o2rQ5GAJuwc2i/NQQUJQ0CJX
+Y96yCXMCjLQwXKrtUEMI8nfg4hodiyXAWuv6id73v3Ykqq+sb/8+aek=
+-----END CERTIFICATE-----</field>
+    </record>
+</data>
+</odoo>
