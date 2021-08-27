@@ -26,7 +26,7 @@
             <field name="name">AFIP</field>
             <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
             <field name='ar_afip_numero_documento'>33693450239</field>
-            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_15"/>
+            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_4"/>
             <field name="image_1920" type="base64" file="generic_defaults/static/img/logo-AFIP.png"/>
         </record>
 
@@ -37,7 +37,7 @@
             <field name="name">ARBA</field>
             <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
             <field name='ar_afip_numero_documento'>30643233343</field>
-            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_15"/>
+            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_4"/>
             <field name="image_1920" type="base64" file="generic_defaults/static/img/logo-ARBA.png"/>
         </record>
 
@@ -48,7 +48,7 @@
             <field name="name">AGIP</field>
             <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
             <field name='ar_afip_numero_documento'>30713700505</field>
-            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_15"/>
+            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_4"/>
             <field name="image_1920" type="base64" file="generic_defaults/static/img/logo-AGIP.png"/>
         </record>
 
@@ -59,7 +59,7 @@
             <field name="name">ATER</field>
             <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
             <field name='ar_afip_numero_documento'>30712147829</field>
-            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_15"/>
+            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_4"/>
             <field name="image_1920" type="base64" file="generic_defaults/static/img/logo-ATER.png"/>
         </record>
 
@@ -70,7 +70,7 @@
             <field name="name">MUNICIPALIDAD DE GRAL SAN MARTIN</field>
             <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
             <field name='ar_afip_numero_documento'>30545681508</field>
-            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_15"/>
+            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_4"/>
             <field name="image_1920" type="base64" file="generic_defaults/static/img/logo-SANMARTIN.png"/>
         </record>
 
@@ -81,8 +81,44 @@
             <field name="name">MUNICIPALIDAD DE SAN MIGUEL</field>
             <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
             <field name='ar_afip_numero_documento'>30681617783</field>
-            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_15"/>
+            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_4"/>
             <field name="image_1920" type="base64" file="generic_defaults/static/img/logo-SANMIGUEL.png"/>
+        </record>
+
+        <record id="generic_defaults.partner_moreno" model="res.partner">
+            <field name="is_company" eval="True"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="supplier_rank" eval="1"/>
+            <field name="name">MUNICIPALIDAD DE MORENO</field>
+            <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
+            <field name='ar_afip_numero_documento'>33999001179</field>
+            <field name='ar_afip_tipo_responsable' ref="numa_l10n_ar_base.afip_tipo_responsable_4"/>
+            <field name="image_1920" type="base64" file="generic_defaults/static/img/logo-MORENO.png"/>
+        </record>
+
+<!-- COMPAÑIA PARA FASE DE HOMOLOGACION -->
+        <record id="base.main_partner" model="res.partner">
+            <field name="name">Dummy S.A.</field>
+            <field name="currency_id" ref="base.ARS" />
+            <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
+            <field name="ar_afip_numero_documento">20134429330</field>
+            <field name="ar_afip_tipo_responsable" search="[('name','ilike','IVA Responsable Inscripto')]" />
+            <field name="ar_iibb_tipo_responsable">local</field>
+            <field name="ar_iibb_numero">20134429330</field>
+            <field name="email">info@dummy.com.ar</field>
+            <field name="website">www.dummy.com.ar</field>
+            <field name="street">Calle 1 Nº 1000</field>
+            <field name="zip">B1000XXX</field>
+            <field name="city">CABA</field>
+            <!-- <field name="state_id" search="[('name','=','Buenos Aires')]" /> -->
+            <field name="phone">+54 (11) 9999-9999</field>
+            <!-- <field name="country_id" ref="base.ar" /> -->
+            <field name="image_1920" type="base64" file="generic_defaults/static/img/dummy.png" />
+        </record>
+
+        <record id="base.main_company" model="res.company">
+            <field name="ar_afip_fecha_inicio_actividades">2000-01-01</field>
+            <field name="favicon" type="base64" file="generic_defaults/static/img/dummy.png" />
         </record>
 
 <!-- CAMBIA NOMBRE DEL DEPOSITO -->
@@ -254,36 +290,36 @@
 <!-- -->
             <field name="company_id" ref="base.main_company" />
             <!-- Setea COA de IVARI -->
-            <!-- <field name="chart_template_id" ref="l10n_ar.l10nar_ri_chart_template" /> -->
+            <field name="chart_template_id" ref="l10n_ar.l10nar_ri_chart_template" />
             <!-- Habilta multicurrency -->
             <field name="group_multi_currency" eval="True" />
             <!-- Habilta dirección de envío -->
             <field name="group_sale_delivery_address" eval="True" />
             <!-- Habilta unidades de medida -->
             <field name="group_uom" eval="True" />
-            <!-- Deshabilta correos de información interna -->
+<!-- Deshabilta correos de información interna -->
             <field name="digest_emails" eval="False" />
-            <!-- Habilta advertencias internas -->
+<!-- Habilta advertencias internas -->
             <field name="group_warning_purchase" eval="True" />
             <field name="group_warning_sale" eval="True" />
             <field name="group_warning_stock" eval="True" />
             <field name="group_warning_account" eval="True" />
-            <!-- Habilta uso de números de lote -->
+<!-- Habilta uso de números de lote -->
             <field name="group_stock_production_lot" eval="True" />
-            <!-- Habilta términos de facturación estándar -->
+<!-- Habilta términos de facturación estándar -->
             <field name="use_invoice_terms" eval="True" />
-<!-- -->
+<!-- Número de lote/serie en orden de envío -->
             <field name="group_lot_on_delivery_slip" eval="True" />
 <!-- -->
             <field name="portal_confirmation_sign" eval="False" />
 <!-- IGNORA BLOQUEO DE AFIP -->
             <field name="ar_afip_bloqueo" eval="False" />
 <!-- ASIGNA CUENTAS CONTABLES -->
-            <!-- <field name="incoming_accruals_account_id" ref="l10n_ar.base_cheques_de_terceros" />
+            <field name="incoming_accruals_account_id" ref="l10n_ar.base_cheques_de_terceros" />
             <field name="outgoing_payable_account_id" ref="l10n_ar.base_cheques_diferidos" />
             <field name="third_party_rejected_account_id" ref="l10n_ar.base_cheques_de_terceros_rechazados" />
             <field name="third_party_handed_out_account_id" ref="l10n_ar.base_cheques_de_terceros" />
-            <field name="own_checks_rejected_account_id" ref="l10n_ar.base_cheques_rechazados" /> -->
+            <field name="own_checks_rejected_account_id" ref="l10n_ar.base_cheques_rechazados" />
 <!-- ASIGNA DIARIO CHEQUES -->
             <!-- <field name="cheques_not_assigned_journal_id" ref="" /> -->
         </record>

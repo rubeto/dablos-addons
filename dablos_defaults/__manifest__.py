@@ -5,7 +5,7 @@
 # """
 
 {
-    "name": "Dablos defaults",
+    "name": "Dablos Defaults",
     "version": "14.0.1.0.0",
     "summary": """
         Establece varios parámetros default automáticamente
@@ -18,7 +18,7 @@
     "depends": [
         "generic_defaults",
         # addons DABLOS
-        "caracteristicas_tecnicas"
+        "dablos_product"
     ],
     "data": [
         "data/01-set-dablos.xml",
@@ -26,7 +26,7 @@
     ],
     "license": "AGPL-3",
     "installable": True,
-    "application": False,
+    "application": True,
     "auto_install": False,
     "sequence": "1",
 }

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate='1'>
+
+        <record id="cert_homo_alias_key_1" model="afipws.alias">
+            <field name="common_name">odoohomo</field>
+            <field name="state">confirmed</field>
+            <field name="tipo">homologacion</field>
+            <field name="tipo_servicio">propio</field>
+            <field name="cuit_company">20134429330</field>
+            <field name="country_id" ref="base.ar"/>
+            <field name="state_id" search="[('name','=ilike','Buenos Aires%')]" />
+            <field name="city">Bella Vista</field>
+            <field name="alert_days" eval="15" />
+            <field name="alert_users" eval="[(6, 0, [ref('base.user_admin')])]"/>
+            <field name="afipws_autorizados_ids" eval="[
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws.afipws_login'),
+                    'active': 'True' 
+                }),
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws_fe.afipws_webservices_wsfev1'),
+                    'active': 'True' 
+                }),
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws_fex.afipws_webservices_wsfexv1'),
+                    'active': 'True' 
+                }),
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws_padron.afipws_ws_sr_constancia_inscripcion'),
+                    'active': 'True' 
+                }),
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws_wscdc.afipws_webservices_wscdc'),
+                    'active': 'True' 
+                })
+            ]" />
+            <field name="pkey">-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC7PAPaCjKyz5YK
+WOxwrRnPDGUItztoXsCU2r0T8SMI1QTRwxFEHCgVXc8qV0xI/DaAb3qvn310hhhE
+vGyFZDLTaDEr7/9zIJ1BFCykXiPRhRvU2lN29dYZqvyxFJq0qavycBbWSwVtalP3
+6Ki8mjZ/lg9Vf8DK7AuvJJDRHP93lAFp7+7ZZp5ajb0e9VGxTlaosl/vvuSrLirF
+wWZZ8U/TuUQVhO/rI8olUpi2lYcO7EvafKvi2yDZXM2rRSkqYaSeoCe5hPwYTCzE
+2NNJ0nPkknohJQKvUwBxybZAL9xnXBf75C2eJvL0Ks9d+OC3ZLe5O7n4y2xsKRu7
+S8XzCCqDAgMBAAECggEAamLhdWTSBdP51wtL3YId5g2O4vLqKJWeK3ZWdRxQ4dXY
+FTAXgXHWPL2+1rofuGDGvxeYyG2BJVKEO5ost2aFkqXjOqn1pf7kG3RRIVv0Ujql
+473iKvfonVEQn7Wraff2oZya/UxHWzJNX9Gs/u1JBhnHwLcEXsjcornOJ2OorNJN
+Y5GmGB0cA6ln99UuUmM7h/tG4MOJJbNmEOMN315DbQaGfH9N0thGX5TRLyX/yZiE
+JQ9T/jP5X0OqTQKVE7gDQn5AUcOz0ANvDplEinIvJAUPFhdBhE8q1Lr8qJGlgGHX
+RDO7Nsh5Wbq1t9jg1+ayIGwcqnvxV07xjzitCA4RoQKBgQDdHxa4xpbWjD3nGDd4
+iWe7aZODD1j3hyjx7fwQBy0dTpBUIufKV4xh1jNaPt4h7fVudIMP1QsuFm5uRj1M
+M2xTd671fjjPuuTflFRUskeOgQVb3ykkLVgobeYM5YfZnxO6w/3WnvFKIL9/nGGr
+hAztYE2Mn2VfqGQo8DdUuD4PGQKBgQDYxJCTUtIP3/vbdmuHkeXg1nDbuKjYYmXM
+pZr4V+FXMdbCsQDQXtkbgYTm21KXft7fuZMyZKBPPsBGHl3S4mG14/Ve1aXrI8Hq
+mytc8vwchcWpb1rBppb85Etgn3THtvoJRyshz4rnobb26uPGAPtodS8KEG0o1Rdz
+25PXq97l+wKBgQDF/v9+hrwr8rm/QyzwbsEGzJt8oHJ+enVMZFfvFi3sbxvHatX4
+lfoq5P1okqCe6w94TzXIKHDxXL6XWaerouQdvS5ZviMqxuQH2y7EBDsUvCzLPgD9
+1uh4kyeKZsEFOW8WLkcONZZDVR2EK8g9J2nX6AKop1XDmOnOyoIRB0TyiQKBgGwu
+NUUBCUrY6rXNNL705je+bZaKYuGSweFPKLcWDKTaf6asdY6IN2vNyMj53g8zRwF6
+eOamZ4cE9ypHT2XGiyMegD9y+poOP2HZTNvXfFCzxkDYDQAmJqZRPPkcu0hMnh5x
+QSpfjKArCcfS1BfmN5IbIX2xUvkU195/UBpLcTNvAoGBAL+pdWPhBDD06PS+nsGh
+IJjfnDLPvak7GE6Cb3M8FjK0QvdVZHTp3hIJKi5Esiftf5nuy7/c4GKOrrzpWxJE
+chj/AvJF7axOQxPIU4YHays/lAoqHhuw+2ps5QX3p9Us5aCFRGxcfWeauBHprOm1
+IFdCCZ1KZDgQtY7C54outofn
+-----END PRIVATE KEY-----</field>
+        </record>
+
+        <record id="homo_certificados" model="afipws.certificados">
+            <field name="alias_id" ref="cert_homo_alias_key_1" />
+            <field name="state">confirmed</field>
+            <field name="fecha_vencimiento">2023-05-01</field>
+            <field name="csr">-----BEGIN CERTIFICATE REQUEST-----
+MIIC1jCCAb4CAQAwgZAxCzAJBgNVBAYTAkFSMRUwEwYDVQQIDAxCdWVub3MgQWly
+ZXMxFDASBgNVBAcMC0JlbGxhIFZpc3RhMRYwFAYDVQQKDA1Qcm92ZXJ2aWFsIFNB
+MQswCQYDVQQLDAJJVDERMA8GA1UEAwwIb2Rvb2hvbW8xHDAaBgNVBAUTE0NVSVQg
+YicyMDEzNDQyOTMzMCcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC7
+PAPaCjKyz5YKWOxwrRnPDGUItztoXsCU2r0T8SMI1QTRwxFEHCgVXc8qV0xI/DaA
+b3qvn310hhhEvGyFZDLTaDEr7/9zIJ1BFCykXiPRhRvU2lN29dYZqvyxFJq0qavy
+cBbWSwVtalP36Ki8mjZ/lg9Vf8DK7AuvJJDRHP93lAFp7+7ZZp5ajb0e9VGxTlao
+sl/vvuSrLirFwWZZ8U/TuUQVhO/rI8olUpi2lYcO7EvafKvi2yDZXM2rRSkqYaSe
+oCe5hPwYTCzE2NNJ0nPkknohJQKvUwBxybZAL9xnXBf75C2eJvL0Ks9d+OC3ZLe5
+O7n4y2xsKRu7S8XzCCqDAgMBAAGgADANBgkqhkiG9w0BAQsFAAOCAQEAmZkPRTP8
+tGLkq5PSLhiTqkt8Qy0WkoQ/5aBKG2wLTMLkNFT5JjsK9SuddRPvBI1vcu91TEQW
+0Q9JutASCmyG42nJaUihzAGs1EqDpkFj/9uL6lJNCwL86mcN10926NqwNaIfNhTD
+Q68+jnlYEajwJUB4QKJr5dhDYiEXm9rUltKZhKhrlNnLxoAzQkpoD/jZtErwEvxz
+Cnzns+ZfpcQQIm9ZYCRFDdEtrGFt51tXhhZ7yJ25KthaIfefjRZu0kZFpmBrvv0d
+aP/cMoZTfRwkWlVFVEb6WDDQVA2r7T4haxLqRThDFnbI/gylxkkBNcB/ZEmcCa1E
+D5y9FsqG9Jeagw==
+-----END CERTIFICATE REQUEST-----</field>
+            <field name="crt">-----BEGIN CERTIFICATE-----
+MIIDSDCCAjCgAwIBAgIIenOFhkNxzQEwDQYJKoZIhvcNAQENBQAwODEaMBgGA1UEAwwRQ29tcHV0
+YWRvcmVzIFRlc3QxDTALBgNVBAoMBEFGSVAxCzAJBgNVBAYTAkFSMB4XDTIxMDYxNzIxMzAwMloX
+DTIzMDYxNzIxMzAwMlowLjERMA8GA1UEAwwIb2Rvb2hvbW8xGTAXBgNVBAUTEENVSVQgMjAxMzQ0
+MjkzMzAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC7PAPaCjKyz5YKWOxwrRnPDGUI
+tztoXsCU2r0T8SMI1QTRwxFEHCgVXc8qV0xI/DaAb3qvn310hhhEvGyFZDLTaDEr7/9zIJ1BFCyk
+XiPRhRvU2lN29dYZqvyxFJq0qavycBbWSwVtalP36Ki8mjZ/lg9Vf8DK7AuvJJDRHP93lAFp7+7Z
+Zp5ajb0e9VGxTlaosl/vvuSrLirFwWZZ8U/TuUQVhO/rI8olUpi2lYcO7EvafKvi2yDZXM2rRSkq
+YaSeoCe5hPwYTCzE2NNJ0nPkknohJQKvUwBxybZAL9xnXBf75C2eJvL0Ks9d+OC3ZLe5O7n4y2xs
+KRu7S8XzCCqDAgMBAAGjYDBeMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUs7LT//3put7eja8R
+IZzWIH3yT28wHQYDVR0OBBYEFGigs5naFhotYvQV4PXovZ+AEh8zMA4GA1UdDwEB/wQEAwIF4DAN
+BgkqhkiG9w0BAQ0FAAOCAQEAoQa4BqC9w6RalZeKsNcI/iVT8NQVbltrXXBkGYtPd/47qmV074fe
+1/evT5ow1hRPFwg4UZCRwYmWq7LV7jNx6JaOCyKr/21YLb74ONZVjfG8TSf4j/GcET+fsdsL447G
+er+7Xn1StJWDTiTWlbMK1Q0IlExHp4xPZmEDucBhB1tVyuu7K4qLlA2gD478j21mOjnIIhXID3ni
+J1Sn6SPwpbOR6/3cXqD4PtXjtqahMBSP+v5khalxBzDHJDrbDHlQdfVFnpzbasSZ3O9ZLPSFt2t3
+7x6GksFpjKrpjnqxGxz+X0hzszveIeQMPA8AbGMjqFh/jkUfCYK/9B7h7zQmFw==
+-----END CERTIFICATE-----</field>
+        </record>
+
+        <record id="base.main_company" model="res.company">
+            <field name="ar_afipws_ws_type">homologacion</field>
+            <field name="ar_afipws_alias_ids" eval="[(4, ref('cert_homo_alias_key_1'))]" />
+        </record>
+
+    </data>
+</odoo>

@@ -5,7 +5,7 @@
 # """
 
 {
-  "name": "Características técnicas",
+  "name": "Dablos Product",
   "summary": "",
   "description": """
   """,
