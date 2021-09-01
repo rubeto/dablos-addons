@@ -310,6 +310,8 @@
             <field name="use_invoice_terms" eval="True" />
 <!-- Número de lote/serie en orden de envío -->
             <field name="group_lot_on_delivery_slip" eval="True" />
+<!-- Habilita el uso de ubicaciones dentro del depósito -->
+            <field name="group_stock_multi_locations" eval="True" />
 <!-- -->
             <field name="portal_confirmation_sign" eval="False" />
 <!-- IGNORA BLOQUEO DE AFIP -->
