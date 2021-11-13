@@ -1,0 +1,118 @@
+<odoo noupdate='1'>
+
+<!-- Crea Punto de venta 00001 REMITO R -->
+        <record id="punto_venta_00001" model="afip.puntos.venta">
+            <field name="name">00001</field>
+            <field name="nombre_fantasia">REMITO R</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sistema">PI</field>
+            <field name='comprobantes_ids' eval="[
+                (0, 0, {
+                    'name': 'REMITO R',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'RR',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_91'),
+                    'alert_remanente': '15',
+                    'alert_days': '45',
+                    'copias': '3',
+                    'en_uso': 'True'
+                })
+            ]" />
+        </record>
+
+<!-- Crea Punto de venta 00004 FACTURA ELECTRONICA -->
+        <record id="punto_venta_00004" model="afip.puntos.venta">
+            <field name="name">00004</field>
+            <field name="nombre_fantasia">FE-PROD</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sistema">RECE</field>
+            <field name="ambiente">produccion</field>
+            <field name='comprobantes_ids' eval="[
+                (0, 0, {
+                    'name': 'FACTURA A',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'FA',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_1'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'NOTA DE DEBITO A',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'NDA',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_2'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'NOTA DE CREDITO A',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'NCA',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_3'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'FACTURA B',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'FB',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_6'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'NOTA DE DEBITO B',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'NDB',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_7'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'NOTA DE CREDITO B',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'NCB',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_8'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'FACTURA A FCE',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'FCE FA',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_201'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'NOTA DE DEBITO A FCE',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'FCE NDA',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_202'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'NOTA DE CREDITO A FCE',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'FCE NCA',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_203'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'FACTURA B FCE',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'FCE FB',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_206'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'NOTA DE DEBITO B FCE',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'FCE NDB',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_207'),
+                    'copias': '1' 
+                }),
+                (0, 0, {
+                    'name': 'NOTA DE CREDITO B FCE',
+                    'company_id': 'base.main_company',
+                    'nombre_corto': 'FCE NCB',
+                    'afip_tipo_comprobante_id': ref('numa_l10n_ar_base.afip_tipo_comprobante_208'),
+                    'copias': '1' 
+                }),
+            ]" />
+        </record>
+
+</odoo>

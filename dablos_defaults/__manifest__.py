@@ -22,7 +22,8 @@
     ],
     "data": [
         "data/01-set-dablos.xml",
-        # "data/02-cert-dablos.xml",
+        "data/02-prod-cert-dablos.xml",
+        "data/03-prod-pv-dablos.xml",
     ],
     "license": "AGPL-3",
     "installable": True,

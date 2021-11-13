@@ -1,10 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-<data noupdate='0'>
+<odoo noupdate='1'>
 
-    <record id="certificate_alias_prod" model="afipws.certificate_alias">
-        <field name="common_name">odooprod</field>
-        <field name="key">-----BEGIN RSA PRIVATE KEY-----
+        <!--- *** alias: odooprod *** -->
+        <record id="cert_prod_alias_key_1" model="afipws.alias">
+            <field name="common_name">odooprod</field>
+            <field name="state">confirmed</field>
+            <field name="tipo">produccion</field>
+            <field name="tipo_servicio">propio</field>
+            <field name="cuit_company">20333389771</field>
+            <field name="country_id" ref="base.ar"/>
+            <field name="state_id" ref="base.state_ar_b" />
+            <field name="city">Bella Vista</field>
+            <field name="alert_days" eval="15" />
+            <field name="alert_users" eval="[(6, 0, [ref('base.user_admin')])]"/>
+            <field name="afipws_autorizados_ids" eval="[
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws.afipws_login'),
+                    'active': 'True' 
+                }),
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws_fe.afipws_webservices_wsfev1'),
+                    'active': 'True' 
+                }),
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws_fex.afipws_webservices_wsfexv1'),
+                    'active': 'True' 
+                }),
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws_padron.afipws_ws_sr_constancia_inscripcion'),
+                    'active': 'True' 
+                }),
+                (0, 0, {
+                    'afipws_id': ref('numa_l10n_ar_afipws_wscdc.afipws_webservices_wscdc'),
+                    'active': 'True' 
+                })
+            ]" />
+            <field name="pkey">-----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBAAKCAQEA6/CVxAg3Jy/P34ZXy4H1hftc3PjrnfUB52VbxdBH8WMBYIHn
 aN5+QKYFjLsDFQXFYlwFwdjyOXvMLuu2jYVJFzQtLY6fm+on5xJjG+Kd6vzpSn3f
 6yHrIaT9ISyLRSfilt6V3yv0j4NXIi0SERnEevYVIFrAU6q8OlZa6TjBfM2CLOsn
@@ -31,20 +61,13 @@ ug8p0Z0CgYEA8ANpfxxV16vfql5oqFR3Y5Aq8HFHUj2BensbHCMcH1J/KUvGFQ8L
 WjR9GeM08sA9XLVD2Qygo6XhINzfBW4Hw1D6mTXPoMz7TfHhAtZ1AKv6aZSfRhGW
 BNiFqlpcfeUP5SbT5cW9SpNSP82kIMjQAIYPGmvX/tmX1Vbrp2IzwI4=
 -----END RSA PRIVATE KEY-----</field>
-        <field name="company_id" ref="base.main_company"/>
-        <field name="country_id" ref="base.ar"/>
-        <field name="state_id" search="[('name','=','Buenos Aires')]" />
-        <field name="city">Bella Vista</field>
-        <field name="company_cuit">20333389771</field>
-        <field name="service_type">in_house</field>
-        <field name="type">production</field>
-        <field name="state">confirmed</field>
-    </record>
+        </record>
 
-    <record id="main_company_certificate" model="afipws.certificate">
-        <field name="alias_id" ref="main_company_certificate_prod"/>
-        <field name="state">confirmed</field>
-        <field name="csr">-----BEGIN CERTIFICATE REQUEST-----
+        <record id="certificado_prod_1" model="afipws.certificados">
+            <field name="alias_id" ref="cert_prod_alias_key_1" />
+            <field name="state">confirmed</field>
+            <field name="fecha_vencimiento">2023-05-01</field>
+            <field name="csr">-----BEGIN CERTIFICATE REQUEST-----
 MIICkTCCAXkCAQAwTDELMAkGA1UEBhMCQVIxDzANBgNVBAoMBkRBQkxPUzERMA8G
 A1UEAwwIT0RPT1BST0QxGTAXBgNVBAUTEENVSVQgMjAzMzMzODk3NzEwggEiMA0G
 CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDr8JXECDcnL8/fhlfLgfWF+1zc+Oud
@@ -60,7 +83,7 @@ xeCRsGsUpivVr8fv1jOfP9qd2XwxoT9J3wuseCWCPdyhcxSc7itL2+ddEvum4hqM
 Ga6LDa8jhh8RwEwBR+fjJGiSdEQgkkcz9VXxgF0/yt2/wO+d8EVgEk4q09lRJiVa
 3Mg7er+FKmYdLL4X31V6KnmpzdYtWc6gQEbooT6ULbe5tRDF4A==
 -----END CERTIFICATE REQUEST-----</field>
-        <field name="crt">-----BEGIN CERTIFICATE-----
+            <field name="crt">-----BEGIN CERTIFICATE-----
 MIIDQzCCAiugAwIBAgIIWXoTGtUrkeMwDQYJKoZIhvcNAQENBQAwMzEVMBMGA1UEAwwMQ29tcHV0
 YWRvcmVzMQ0wCwYDVQQKDARBRklQMQswCQYDVQQGEwJBUjAeFw0yMTA1MDEyMTA4NTJaFw0yMzA1
 MDEyMTA4NTJaMC4xETAPBgNVBAMMCG9kb29wcm9kMRkwFwYDVQQFExBDVUlUIDIwMzMzMzg5Nzcx
@@ -77,6 +100,11 @@ eUUyD9HBALWop/8A7CBc8JbY5VrVl3DC3hk6dtM3O3HoqmOsaSUkPmFvrymDVGN+NZYrgY7bavqP
 IU61oAMVfO0Jkdi/EUg7nV0SEmCi3rlEfFDOoslR8stYCVOKWFk1o2rQ5GAJuwc2i/NQQUJQ0CJX
 Y96yCXMCjLQwXKrtUEMI8nfg4hodiyXAWuv6id73v3Ykqq+sb/8+aek=
 -----END CERTIFICATE-----</field>
-    </record>
-</data>
+        </record>
+
+        <!-- <record id="base.main_company" model="res.company"> -->
+            <!-- <field name="ar_afipws_ws_type">produccion</field> -->
+            <!-- <field name="ar_afipws_alias_ids" eval="[(4, ref('cert_prod_alias_key_1'))]" /> -->
+        <!-- </record> -->
+
 </odoo>

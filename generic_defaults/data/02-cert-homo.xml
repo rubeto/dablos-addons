@@ -1,6 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
-<odoo>
-    <data noupdate='1'>
+<odoo noupdate='1'>
 
         <record id="cert_homo_alias_key_1" model="afipws.alias">
             <field name="common_name">odoohomo</field>
@@ -111,5 +109,4 @@ J1Sn6SPwpbOR6/3cXqD4PtXjtqahMBSP+v5khalxBzDHJDrbDHlQdfVFnpzbasSZ3O9ZLPSFt2t3
             <field name="ar_afipws_alias_ids" eval="[(4, ref('cert_homo_alias_key_1'))]" />
         </record>
 
-    </data>
 </odoo>
