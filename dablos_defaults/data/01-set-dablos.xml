@@ -6,7 +6,7 @@
             <field name="ar_afip_tipo_documento" ref="numa_l10n_ar_base.afip_tipo_documento_80" />
             <field name="ar_afip_numero_documento">20333389771</field>
             <field name="ar_afip_tipo_responsable" ref="numa_l10n_ar_base.afip_tipo_responsable_1" />
-            <field name="ar_iibb_tipo_responsable">local</field>
+            <field name="ar_iibb_tipo_responsable">cm</field>
             <field name="ar_iibb_numero">20333389771</field>
             <field name="email">compras@resortesdablos.com.ar</field>
             <field name="website">www.resortesdablos.com.ar</field>
@@ -14,14 +14,44 @@
             <field name="zip">B1661</field>
             <field name="city">Bella Vista</field>
             <field name="state_id" ref="base.state_ar_b" />
-            <field name="phone">+54 (11) 4666-8961</field>
+            <field name="phone">+549 (11) 2205-4818</field>
             <field name="country_id" ref="base.ar" />
             <field name="image_1920" type="base64" file="dablos_defaults/static/img/resortes-dablos.png" />
+            <field name='bank_ids' eval="[
+                (0, 0, {
+                    'acc_holder_name': 'Aguirre Damián Ezequiel',
+                    'acc_number': '0150806001000135706003',
+                    'acc_type': 'cbu',
+                    'bank_id': ref('numa_l10n_ar_base.l10n_ar_bank_5'),
+                    'currency_id': ref('base.ARS'),
+                })
+            ]" />
         </record>
 
         <record id="base.main_company" model="res.company">
             <field name="ar_afip_fecha_inicio_actividades">2017-08-01</field>
             <field name="favicon" type="base64" file="dablos_defaults/static/img/resortes-dablos.png" />
+        </record>
+
+<!-- CAMBIA NOMBRE DE DEPOSITOS -->
+        <record id="stock.warehouse0" model="stock.warehouse">
+            <field name="name">Depósito 1</field>
+            <field name="code">R8</field>
+            <field name="reception_steps">two_steps</field>
+            <field name="delivery_steps">pick_ship</field>
+            <field name="buy_to_resupply" eval="True" />
+            <field name="mto_mts_management" eval="False" />
+            <field name="manufacture_to_resupply" eval="False" />
+        </record>
+
+        <record id="warehouse1" model="stock.warehouse">
+            <field name="name">Depósito 2</field>
+            <field name="code">D2</field>
+            <field name="reception_steps">two_steps</field>
+            <field name="delivery_steps">pick_ship</field>
+            <field name="buy_to_resupply" eval="True" />
+            <field name="mto_mts_management" eval="False" />
+            <field name="manufacture_to_resupply" eval="False" />
         </record>
 
 <!-- SETEA MAIL DEFAULTS -->
@@ -85,5 +115,118 @@
             <field name="original">false</field>
             <field name="active">true</field>
         </record>
+
+        <!-- Borra diarios -->
+        <delete model='account.journal' search="[('code','!=','STJ')]" />
+
+        <!-- Crea diarios -->
+        <record id="diario_caja" model="account.journal">
+            <field name="name">Caja</field>
+            <field name="type">cash</field>
+            <field name="code">CAJA</field>
+            <field name="default_account_id" search="[('code','=','1.1.1.01.001')]" />
+            <field name="suspense_account_id" search="[('code','=','1.1.1.01.001')]" />
+            <field name="payment_credit_account_id" search="[('code','=','1.1.1.01.001')]" />
+            <field name="payment_debit_account_id" search="[('code','=','1.1.1.01.001')]" />
+            <!-- <field name="profit_account_id" ref="" /> -->
+            <!-- <field name="loss_account_id" ref="" /> -->
+            <!-- <field name="currency_id"></field> -->
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <record id="diario_icbc_ca" model="account.journal">
+            <field name="name">Banco ICBC CA</field>
+            <field name="type">bank</field>
+            <field name="code">BPCC</field>
+            <field name="default_account_id" search="[('code','=','1.1.1.02.002')]" />
+            <field name="suspense_account_id" search="[('code','=','1.1.1.02.002')]" />
+            <field name="payment_credit_account_id" search="[('code','=','1.1.1.02.002')]" />
+            <field name="payment_debit_account_id" search="[('code','=','1.1.1.02.002')]" />
+            <!-- <field name="bank_account_id" ref=""/> -->
+            <!-- <field name="currency_id"></field> -->
+            <field name="sequence" eval="2"/>
+        </record>
+
+        <record id="diario_ventas_nacional" model="account.journal">
+            <field name="name">Facturas Ventas Nacional</field>
+            <field name="type">sale</field>
+            <field name="code">VNAC</field>
+            <field name="l10n_latam_use_documents" eval="False"/>
+            <field name="default_account_id" ref="l10n_ar.1_base_venta_de_mercaderia"/>
+            <field name="refund_sequence" eval="False"/>
+            <field name="sequence" eval="3"/>
+        </record>
+            <!-- <field name="currency_id"></field> -->
+
+        <!-- <record id="diario_ventas_internacional" model="account.journal">
+            <field name="name">Facturas Ventas Internacional</field>
+            <field name="type">sale</field>
+            <field name="code">VINT</field>
+            <field name="l10n_latam_use_documents" eval="False"/>
+            <field name="default_account_id" ref="l10n_ar.1_base_venta_de_mercaderia"/>
+            <field name="refund_sequence" eval="False"/>
+            <field name="sequence" eval="4"/>
+        </record> -->
+            <!-- <field name="currency_id"></field> -->
+
+        <record id="diario_compras_nacional" model="account.journal">
+            <field name="name">Facturas Compras Nacional</field>
+            <field name="type">purchase</field>
+            <field name="code">CNAC</field>
+            <field name="l10n_latam_use_documents" eval="False"/>
+            <field name="default_account_id" ref="l10n_ar.1_base_compra_mercaderia"/>
+            <field name="refund_sequence" eval="False"/>
+            <field name="sequence" eval="5"/>
+        </record>
+            <!-- <field name="currency_id"></field> -->
+
+        <!-- <record id="diario_compras_internacional" model="account.journal">
+            <field name="name">Facturas Compras Internacional</field>
+            <field name="type">purchase</field>
+            <field name="code">CINT</field>
+            <field name="l10n_latam_use_documents" eval="False"/>
+            <field name="default_account_id" ref="l10n_ar.1_base_compra_mercaderia"/>
+            <field name="refund_sequence" eval="False"/>
+            <field name="sequence" eval="6"/>
+        </record> -->
+            <!-- <field name="currency_id"></field> -->
+
+        <record id="diario_cobranzas" model="account.journal">
+            <field name="name">Cobranzas</field>
+            <field name="type">general</field>
+            <field name="code">COB</field>
+            <field name="used_for_payment_orders" eval="False"/>
+            <field name="used_for_receipts" eval="True"/>
+            <!-- <field name="currency_id"></field> -->
+            <field name="sequence" eval="7"/>
+        </record>
+
+        <record id="diario_pagos" model="account.journal">
+            <field name="name">Pagos</field>
+            <field name="type">general</field>
+            <field name="code">PAG</field>
+            <field name="used_for_payment_orders" eval="True"/>
+            <field name="used_for_receipts" eval="False"/>
+            <!-- <field name="currency_id"></field> -->
+            <field name="sequence" eval="8"/>
+        </record>
+
+        <record id="diario_diferencia_cambio" model="account.journal">
+            <field name="name">Diferencia de Cambio</field>
+            <field name="type">general</field>
+            <field name="code">CAMBI</field>
+            <field name="used_for_payment_orders" eval="False"/>
+            <field name="used_for_receipts" eval="False"/>
+            <!-- <field name="currency_id"></field> -->
+            <field name="sequence" eval="9"/>
+        </record>
+
+        <function name="write" model="account.journal">
+            <function name="search" model="account.journal">
+                <value eval="[('code', '=', 'STJ')]"/>
+            </function>
+            <value eval="{'sequence': 10}"/>
+        </function>
+
 
 </odoo>
