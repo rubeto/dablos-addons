@@ -1,4 +1,4 @@
-<odoo noupdate='0'>
+<odoo noupdate='1'>
 
 <!-- BORRA ESTADOS / PROVINCIAS INNECESARIOS -->
         <!-- Borra estados/provincias excepto las de Argentina -->
@@ -341,7 +341,7 @@
 <!-- Disable auto-trigger scheduler for replenishment -->
         <function model='ir.config_parameter' name='set_param' eval="('stock.no_auto_scheduler',True)" />
 
-        <!-- Booleans en res.config.settings -->
+        <!-- res.config.settings -->
         <record id="generic_config_settings" model="res.config.settings">
 <!-- -->
             <field name="company_id" ref="base.main_company" />
@@ -375,11 +375,11 @@
 <!-- IGNORA BLOQUEO DE AFIP -->
             <field name="ar_afip_bloqueo" eval="False" />
 <!-- ASIGNA CUENTAS CONTABLES -->
-            <!-- <field name="incoming_accruals_account_id" ref="l10n_ar.base_cheques_de_terceros" />
-            <field name="outgoing_payable_account_id" ref="l10n_ar.base_cheques_diferidos" />
-            <field name="own_checks_rejected_account_id" ref="l10n_ar.base_cheques_rechazados" />
-            <field name="third_party_handed_out_account_id" ref="l10n_ar.base_cheques_de_terceros" />
-            <field name="third_party_rejected_account_id" ref="l10n_ar.base_cheques_de_terceros_rechazados" /> -->
+            <field name="incoming_accruals_account_id" ref="l10n_ar.1_base_cheques_de_terceros" />
+            <field name="outgoing_payable_account_id" ref="l10n_ar.1_base_cheques_diferidos" />
+            <field name="own_checks_rejected_account_id" ref="l10n_ar.1_base_cheques_rechazados" />
+            <field name="third_party_handed_out_account_id" ref="l10n_ar.1_base_cheques_de_terceros" />
+            <field name="third_party_rejected_account_id" ref="l10n_ar.1_base_cheques_de_terceros_rechazados" />
 <!-- ASIGNA DIARIO CHEQUES -->
             <!-- <field name="cheques_not_assigned_journal_id" ref="" /> -->
 <!-- Setea tipo de lista de precio a formula -->
@@ -392,7 +392,6 @@
         <function model="res.config.settings" name="execute">
             <value model="res.config.settings" search="[('id', '=', ref('generic_config_settings'))]" />
         </function>
-
 
 <!-- ADMINISTRATOR -->
         <!-- Establece el contacto 'Administrador' -->

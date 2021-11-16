@@ -65,6 +65,10 @@
 <!--            <field name="group_lot_on_delivery_slip" eval="True" /> -->
 <!-- FECHAS DE VENCIMIENTO -->
 <!--            <field name="module_product_expiry" eval="False" /> -->
+<!-- Habilita términos de facturación estándar -->
+            <field name="use_invoice_terms" eval="True" />
+<!-- Define términos de facturación estándar -->
+            <field name="invoice_terms">XXX</field>
         </record>
         <function model="res.config.settings" name="execute">
             <value model="res.config.settings" search="[('id', '=', ref('specific_domain_config_settings'))]" />
