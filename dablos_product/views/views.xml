@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <odoo>
-    <data>
 
         <record id="sale.product_template_action" model="ir.actions.act_window">    
             <field name="view_mode">tree,kanban,form,activity</field>   
@@ -54,5 +51,4 @@
             </field>
         </record>
 
-    </data>
 </odoo>
