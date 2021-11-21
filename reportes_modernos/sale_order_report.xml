@@ -1,0 +1,88 @@
+<odoo>
+
+    <template id="report_assets_common_custom_fonts" name="Assets para Reportes Modernos" inherit_id="web.report_assets_common">
+        <xpath expr="//link[last()]" position="after">
+            <link href="https://fonts.googleapis.com/css?family=Roboto Condensed" rel="stylesheet"/>
+            <link href="/reportes_modernos/static/src/css/report_styles.css" rel="stylesheet" type="text/css"/>
+        </xpath>
+    </template>
+
+    <!-- <template id="external_layout_standard" inherit_id="web.external_layout">
+        <xpath expr="//div[hasclass('header')]" position="attributes">
+            <attribute name="style">font-family: 'Roboto Condensed', sans-serif;</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('page')]" position="attributes">
+            <attribute name="style">font-family: 'Roboto Condensed', sans-serif;</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('footer')]" position="attributes">
+            <attribute name="style">font-family: 'Roboto Condensed', sans-serif;</attribute>
+        </xpath>
+    </template> -->
+
+    <template id="external_layout_inherited" inherit_id="web.external_layout">
+        <xpath expr="//div[hasclass('header')]" position="replace">
+            <div class="header">
+                <div class="row">
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="external_layout_inherited" inherit_id="web.external_layout">
+        <xpath expr="//div[hasclass('footer')]" position="replace">
+            <div class="footer">
+                <div class="row">
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="report_saleorder_document">
+        <t t-call="web.external_layout">
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id" />
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company" />
+            </t>
+            <div class="page">
+                <div class="oe_structure"/>
+
+                <h2 class="mt16">
+                    <span>PRUEBA</span>
+                </h2>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="sale_order_report" inherit_id="sale.report_saleorder">
+        <xpath expr="//t[@t-call='web.html_container']" position="replace">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="reportes_modernos.report_saleorder_document" t-lang="o.partner_id.lang" />
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <record model="report.paperformat" id="paperformat_reportes_modernos">
+        <field name="name">Paperformat Sale Order</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field> <!-- 142px -->
+        <field name="header_spacing">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="margin_bottom">15</field> <!-- 53px -->
+        <field name="margin_right">7</field>
+        <field name="margin_left">7</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="sale.action_report_saleorder" model="ir.actions.report">
+        <field name="paperformat_id" ref="reportes_modernos.paperformat_reportes_modernos"/>
+    </record>
+
+</odoo>

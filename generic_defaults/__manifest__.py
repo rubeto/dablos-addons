@@ -91,7 +91,7 @@
         'numa_l10n_ar_agip', # CABA
         'numa_l10n_ar_arba', # Buenos Aires
         'numa_l10n_ar_ater', # Entre Ríos
-        'numa_l10n_ar_atm', # Misiones
+        'numa_l10n_ar_atm_misiones', # Misiones
         # Contabilidad para ODOO Community
         'base_accounting_kit', # Cybrosys Full Accounting Kit
         'dynamic_accounts_report', # Cybrosysy Dynamic Financial Reports

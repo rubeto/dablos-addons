@@ -1,0 +1,60 @@
+// ------------------------------------------------------------------
+// Generic layout
+// ------------------------------------------------------------------
+@font-face {
+    font-family: 'Oswald';
+    src: url('/reportes_modernos/static/src/fonts/google/Oswald/Oswald-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/reportes_modernos/static/src/fonts/google/Roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/reportes_modernos/static/src/fonts/google/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/reportes_modernos/static/src/fonts/google/Roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/reportes_modernos/static/src/fonts/google/RobotoCondensed/RobotoCondensed-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/reportes_modernos/static/src/fonts/google/RobotoCondensed/RobotoCondensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/reportes_modernos/static/src/fonts/google/RobotoCondensed/RobotoCondensed-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto Condensed';
+    font-weight: 300;
+    font-size: 16px;
+}
